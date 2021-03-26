@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class IdeasController < ApplicationController
-  before_action :set_idea, only: [:show, :edit, :update, :destroy]
+  before_action :set_idea, only: %i[show edit update destroy]
 
   # GET /ideas
   def index
@@ -7,8 +9,7 @@ class IdeasController < ApplicationController
   end
 
   # GET /ideas/1
-  def show
-  end
+  def show; end
 
   # GET /ideas/new
   def new
@@ -16,8 +17,7 @@ class IdeasController < ApplicationController
   end
 
   # GET /ideas/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /ideas
   def create
@@ -46,13 +46,14 @@ class IdeasController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_idea
-      @idea = Idea.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def idea_params
-      params.require(:idea).permit(:user_id, :name, :ancestry, :description, :private)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_idea
+    @idea = Idea.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def idea_params
+    params.require(:idea).permit(:user_id, :name, :ancestry, :description, :private)
+  end
 end
