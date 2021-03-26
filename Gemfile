@@ -9,6 +9,7 @@ gem 'bootsnap', '>= 1.4.4', require: false
 gem 'jbuilder', '~> 2.7'
 gem 'pg', '~> 1.1'
 gem 'puma', '~> 5.0'
+gem 'rack-timeout'
 gem 'rails', '~> 6.1.3'
 gem 'redis', '~> 4.0'
 gem 'rubocop-performance'
