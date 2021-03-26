@@ -1,1 +1,7 @@
 inherit_from: .rubocop_todo.yml
+
+Style/ClassAndModuleChildren:
+  EnforcedStyle: compact
+  Exclude:
+    - app/channels/**/*
+    - config/**/*
