@@ -14,7 +14,7 @@ gem 'redis', '~> 4.0'
 gem 'rubocop-performance'
 gem 'rubocop-rails'
 gem 'sass-rails', '>= 6'
-gem 'turbolinks', '~> 5'
+gem 'turbo-rails'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'webpacker', '~> 5.0'
 
