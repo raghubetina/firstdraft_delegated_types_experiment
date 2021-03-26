@@ -1,0 +1,79 @@
+<% was_validated = model_column.errors.any? %>
+
+<% form_html_options = { novalidate: true, class: "mb-3" } %>
+
+<%= form_for(model_column, html: form_html_options) do |f| %>
+  <div class="form-group">
+    <% name_class = "form-control" %>
+    <% name_was_invalid = model_column.errors.include?(:name) %>
+
+    <% if was_validated %>
+      <% if name_was_invalid %>
+        <% name_class << " is-invalid" %>
+      <% else %>
+        <% name_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :name %>
+
+    <%= f.text_field :name, class: name_class, placeholder: "Enter name" %>
+    <% if name_was_invalid %>
+      <% model_column.errors.full_messages_for(:name).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div class="form-group">
+    <% data_type_class = "form-control" %>
+    <% data_type_was_invalid = model_column.errors.include?(:data_type) %>
+
+    <% if was_validated %>
+      <% if data_type_was_invalid %>
+        <% data_type_class << " is-invalid" %>
+      <% else %>
+        <% data_type_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :data_type %>
+
+    <%= f.text_field :data_type, class: data_type_class, placeholder: "Enter data type" %>
+    <% if data_type_was_invalid %>
+      <% model_column.errors.full_messages_for(:data_type).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div class="form-group">
+    <% model_class = "form-control" %>
+    <% model_was_invalid = model_column.errors.include?(:model) %>
+
+    <% if was_validated %>
+      <% if model_was_invalid %>
+        <% model_class << " is-invalid" %>
+      <% else %>
+        <% model_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :model %>
+
+    <%= f.text_field :model, class: model_class, placeholder: "Enter model" %>
+    <% if model_was_invalid %>
+      <% model_column.errors.full_messages_for(:model).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+
+  <%= f.button class: "btn btn-outline-secondary btn-block" %>
+<% end %>

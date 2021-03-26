@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  namespace :model do
+    resources :columns
+  end
   resources :models
   resources :ideas
   devise_for :users
