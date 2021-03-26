@@ -21,8 +21,10 @@
 #
 #  fk_rails_...  (model_id => models.id)
 #
-class Model::Column < ApplicationRecord
-  belongs_to :model
+module Model
+  class Column < ApplicationRecord
+    belongs_to :model
 
-  delegated_type :data_type, types: %w[]
+    delegated_type :data_type, types: %w[Column::String Column::Integer]
+  end
 end
