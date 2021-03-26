@@ -1,0 +1,151 @@
+<% was_validated = model.errors.any? %>
+
+<% form_html_options = { novalidate: true, class: "mb-3" } %>
+
+<%= form_for(model, html: form_html_options) do |f| %>
+  <div class="form-group">
+    <% idea_class = "form-control" %>
+    <% idea_was_invalid = model.errors.include?(:idea) %>
+
+    <% if was_validated %>
+      <% if idea_was_invalid %>
+        <% idea_class << " is-invalid" %>
+      <% else %>
+        <% idea_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :idea %>
+
+    <%= f.text_field :idea, class: idea_class, placeholder: "Enter idea" %>
+    <% if idea_was_invalid %>
+      <% model.errors.full_messages_for(:idea).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div class="form-group">
+    <% name_class = "form-control" %>
+    <% name_was_invalid = model.errors.include?(:name) %>
+
+    <% if was_validated %>
+      <% if name_was_invalid %>
+        <% name_class << " is-invalid" %>
+      <% else %>
+        <% name_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :name %>
+
+    <%= f.text_field :name, class: name_class, placeholder: "Enter name" %>
+    <% if name_was_invalid %>
+      <% model.errors.full_messages_for(:name).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div class="form-group">
+    <% classified_class = "form-control" %>
+    <% classified_was_invalid = model.errors.include?(:classified) %>
+
+    <% if was_validated %>
+      <% if classified_was_invalid %>
+        <% classified_class << " is-invalid" %>
+      <% else %>
+        <% classified_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :classified %>
+
+    <%= f.text_field :classified, class: classified_class, placeholder: "Enter classified" %>
+    <% if classified_was_invalid %>
+      <% model.errors.full_messages_for(:classified).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div class="form-group">
+    <% plural_class = "form-control" %>
+    <% plural_was_invalid = model.errors.include?(:plural) %>
+
+    <% if was_validated %>
+      <% if plural_was_invalid %>
+        <% plural_class << " is-invalid" %>
+      <% else %>
+        <% plural_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :plural %>
+
+    <%= f.text_field :plural, class: plural_class, placeholder: "Enter plural" %>
+    <% if plural_was_invalid %>
+      <% model.errors.full_messages_for(:plural).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div class="form-group">
+    <% singular_class = "form-control" %>
+    <% singular_was_invalid = model.errors.include?(:singular) %>
+
+    <% if was_validated %>
+      <% if singular_was_invalid %>
+        <% singular_class << " is-invalid" %>
+      <% else %>
+        <% singular_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :singular %>
+
+    <%= f.text_field :singular, class: singular_class, placeholder: "Enter singular" %>
+    <% if singular_was_invalid %>
+      <% model.errors.full_messages_for(:singular).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div class="form-group">
+    <% underscored_class = "form-control" %>
+    <% underscored_was_invalid = model.errors.include?(:underscored) %>
+
+    <% if was_validated %>
+      <% if underscored_was_invalid %>
+        <% underscored_class << " is-invalid" %>
+      <% else %>
+        <% underscored_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :underscored %>
+
+    <%= f.text_field :underscored, class: underscored_class, placeholder: "Enter underscored" %>
+    <% if underscored_was_invalid %>
+      <% model.errors.full_messages_for(:underscored).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+
+  <%= f.button class: "btn btn-outline-secondary btn-block" %>
+<% end %>

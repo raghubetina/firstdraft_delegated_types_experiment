@@ -12,7 +12,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_210_326_105_702) do
+ActiveRecord::Schema.define(version: 20_210_326_111_934) do
   # These are extensions that must be enabled in order to support this database
   enable_extension 'citext'
   enable_extension 'pgcrypto'
@@ -31,6 +31,18 @@ ActiveRecord::Schema.define(version: 20_210_326_105_702) do
     t.index ['user_id'], name: 'index_ideas_on_user_id'
   end
 
+  create_table 'models', id: :uuid, default: -> { 'gen_random_uuid()' }, force: :cascade do |t|
+    t.uuid 'idea_id', null: false
+    t.string 'name'
+    t.string 'classified'
+    t.string 'plural'
+    t.string 'singular'
+    t.string 'underscored'
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
+    t.index ['idea_id'], name: 'index_models_on_idea_id'
+  end
+
   create_table 'users', id: :uuid, default: -> { 'gen_random_uuid()' }, force: :cascade do |t|
     t.citext 'email', default: '', null: false
     t.string 'encrypted_password', default: '', null: false
@@ -47,4 +59,5 @@ ActiveRecord::Schema.define(version: 20_210_326_105_702) do
   end
 
   add_foreign_key 'ideas', 'users'
+  add_foreign_key 'models', 'ideas'
 end

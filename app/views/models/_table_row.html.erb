@@ -1,0 +1,41 @@
+<tr>
+  <td>
+    <%= model.idea %>
+  </td>
+
+  <td>
+    <%= model.name %>
+  </td>
+
+  <td>
+    <%= model.classified %>
+  </td>
+
+  <td>
+    <%= model.plural %>
+  </td>
+
+  <td>
+    <%= model.singular %>
+  </td>
+
+  <td>
+    <%= model.underscored %>
+  </td>
+
+  <td>
+    <div class="btn-group">
+      <%= link_to model, class: "btn btn-sm btn-outline-secondary" do %>
+        <i class="fas fa-search-plus fa-fw"></i>
+      <% end %>
+
+      <%= link_to edit_model_url(model), class: "btn btn-sm btn-outline-secondary" do %>
+        <i class="fas fa-edit fa-fw"></i>
+      <% end %>
+
+      <%= link_to model, method: :delete, data: { confirm: "Do you really want to delete this model?" }, class: "btn btn-sm btn-outline-secondary" do %>
+        <i class="fas fa-trash-alt fa-fw"></i>
+      <% end %>
+    </div>
+  </td>
+</tr>
