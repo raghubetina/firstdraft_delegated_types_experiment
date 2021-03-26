@@ -24,8 +24,4 @@
 #
 class Model < ApplicationRecord
   belongs_to :idea
-
-  def self.table_name_prefix
-    'model_'
-  end
 end
