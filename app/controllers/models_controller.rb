@@ -26,7 +26,7 @@ class ModelsController < ApplicationController
     if @model.save
       redirect_to @model, notice: 'Model was successfully created.'
     else
-      render :new
+      render :new, status: 422
     end
   end
 
@@ -35,7 +35,7 @@ class ModelsController < ApplicationController
     if @model.update(model_params)
       redirect_to @model, notice: 'Model was successfully updated.'
     else
-      render :edit
+      render :edit, status: 422
     end
   end
 

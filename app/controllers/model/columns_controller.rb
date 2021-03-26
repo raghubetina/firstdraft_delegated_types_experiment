@@ -26,7 +26,7 @@ class Model::ColumnsController < ApplicationController
     if @model_column.save
       redirect_to @model_column, notice: 'Column was successfully created.'
     else
-      render :new
+      render :new, status: 422
     end
   end
 
@@ -35,7 +35,7 @@ class Model::ColumnsController < ApplicationController
     if @model_column.update(model_column_params)
       redirect_to @model_column, notice: 'Column was successfully updated.'
     else
-      render :edit
+      render :edit, status: 422
     end
   end
 

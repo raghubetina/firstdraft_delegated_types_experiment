@@ -26,7 +26,7 @@ class IdeasController < ApplicationController
     if @idea.save
       redirect_to @idea, notice: 'Idea was successfully created.'
     else
-      render :new
+      render :new, status: 422, status: 422
     end
   end
 
@@ -35,7 +35,7 @@ class IdeasController < ApplicationController
     if @idea.update(idea_params)
       redirect_to @idea, notice: 'Idea was successfully updated.'
     else
-      render :edit
+      render :edit, status: 422
     end
   end
 
