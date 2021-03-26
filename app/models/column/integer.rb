@@ -9,4 +9,5 @@
 #  updated_at :datetime         not null
 #
 class Column::Integer < ApplicationRecord
+  include DataType
 end
