@@ -39,7 +39,5 @@ module Firstdraft
       g.scaffold_stylesheet false
       g.orm :active_record, primary_key_type: :uuid
     end
-
-    config.action_view.form_with_generates_remote_forms = false
   end
 end
