@@ -37,6 +37,7 @@ module Firstdraft
     config.generators do |g|
       g.system_tests = nil
       g.scaffold_stylesheet false
+      g.orm :active_record, primary_key_type: :uuid
     end
 
     config.action_view.form_with_generates_remote_forms = false
