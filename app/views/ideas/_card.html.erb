@@ -1,0 +1,47 @@
+<div class="card mb-3">
+  <h2 class="card-header h4">
+    Idea #<%= idea.id %>
+  </h2>
+
+  <div class="card-body">
+    <dl class="mb-1">
+      <dt>User</dt>
+      <dd><%= idea.user %></dd>
+
+      <dt>Name</dt>
+      <dd><%= idea.name %></dd>
+
+      <dt>Ancestry</dt>
+      <dd><%= idea.ancestry %></dd>
+
+      <dt>Description</dt>
+      <dd><%= idea.description %></dd>
+
+      <dt>Private</dt>
+      <dd><%= idea.private %></dd>
+
+    </dl>
+
+    <div class="row">
+      <div class="col">
+        <%= link_to_show_or_back idea, '<i class="fas fa-search-plus"></i>'.html_safe, '<i class="fas fa-chevron-left"></i>'.html_safe, class: "btn btn-block btn-outline-secondary" %>
+      </div>
+
+      <div class="col">
+        <%= link_to edit_idea_url(idea), class: "btn btn-block btn-outline-secondary" do %>
+          <i class="fas fa-edit"></i>
+        <% end %>
+      </div>
+
+      <div class="col">
+        <%= link_to idea, method: :delete, data: { confirm: "Do you really want to delete this idea?" }, class: "btn btn-block btn-outline-secondary" do %>
+          <i class="fas fa-trash-alt"></i>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-footer text-muted">
+    Last updated <%= time_ago_in_words(idea.updated_at) %> ago
+  </div>
+</div>
