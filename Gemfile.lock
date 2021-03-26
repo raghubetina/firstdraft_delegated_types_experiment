@@ -1,11 +1,14 @@
 GIT
-  remote: https://github.com/firstdraft/draft_generators.git
-  revision: b749884a069c7f06472da628f604c246655d6495
-  branch: winter-2020
+  remote: https://github.com/ghiculescu/devise.git
+  revision: 25124d5db77daf3ed1335d4d863e5651cba4c553
+  branch: error-code-422
   specs:
-    draft_generators (0.0.3)
-      devise
-      indefinite_article
+    devise (4.7.3)
+      bcrypt (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 4.1.0)
+      responders
+      warden (~> 1.2.3)
 
 GEM
   remote: https://rubygems.org/
@@ -94,20 +97,12 @@ GEM
     concurrent-ruby (1.1.8)
     crass (1.0.6)
     debug_inspector (1.1.0)
-    devise (4.7.3)
-      bcrypt (~> 3.0)
-      orm_adapter (~> 0.1)
-      railties (>= 4.1.0)
-      responders
-      warden (~> 1.2.3)
     erubi (1.10.0)
     ffi (1.15.0)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     i18n (1.8.9)
       concurrent-ruby (~> 1.0)
-    indefinite_article (0.2.4)
-      activesupport
     jbuilder (2.11.2)
       activesupport (>= 5.0.0)
     listen (3.5.0)
@@ -271,7 +266,7 @@ DEPENDENCIES
   bootsnap (>= 1.4.4)
   bullet
   byebug
-  draft_generators!
+  devise!
   jbuilder (~> 2.7)
   listen (~> 3.3)
   pg (~> 1.1)

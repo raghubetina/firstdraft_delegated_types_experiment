@@ -21,7 +21,7 @@ class IdeasController < ApplicationController
 
   # POST /ideas
   def create
-    @idea = Idea.new(idea_params)
+    @idea = current_user.ideas.build(idea_params)
 
     if @idea.save
       redirect_to @idea, notice: 'Idea was successfully created.'

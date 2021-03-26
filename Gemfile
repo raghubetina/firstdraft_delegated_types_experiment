@@ -6,6 +6,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '3.0.0'
 
 gem 'bootsnap', '>= 1.4.4', require: false
+gem 'devise', github: 'ghiculescu/devise', branch: 'error-code-422'
 gem 'jbuilder', '~> 2.7'
 gem 'pg', '~> 1.1'
 gem 'puma', '~> 5.0'
@@ -31,7 +32,7 @@ end
 group :development do
   gem 'annotate'
   gem 'bullet'
-  gem 'draft_generators', github: 'firstdraft/draft_generators', branch: 'winter-2020'
+  # gem 'draft_generators', github: 'firstdraft/draft_generators', branch: 'winter-2020'
   gem 'listen', '~> 3.3'
   gem 'rack-mini-profiler', '~> 2.0'
   gem 'rails-erd'
