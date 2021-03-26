@@ -8,7 +8,5 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
-module Column
-  class String < ApplicationRecord
-  end
+class Column::String < ApplicationRecord
 end

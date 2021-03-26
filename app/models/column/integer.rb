@@ -8,7 +8,5 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
-module Column
-  class Integer < ApplicationRecord
-  end
+class Column::Integer < ApplicationRecord
 end
