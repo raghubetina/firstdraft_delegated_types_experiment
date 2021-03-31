@@ -21,6 +21,7 @@ class IdeasController < ApplicationController
 
   # POST /ideas
   def create
+    asdasd
     @idea = current_user.ideas.build(idea_params)
 
     if @idea.save
